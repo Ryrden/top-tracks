@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "dev": "concurrently \"cd ./server && npm run dev\" \"cd ./client && npm run dev\"",
+        "lint:fix": "eslint --fix ./client/src ./server/src",
+        "pretty": "prettier --write ./client/src ./server/src",
+        "check": "npm run pretty && npm run lint:fix"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.48.2",
+        "concurrently": "^7.6.0",
+        "eslint": "^8.25.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-react": "^7.32.1",
+        "prettier": "^2.8.1"
+    }
+}
