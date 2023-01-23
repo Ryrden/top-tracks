@@ -71,25 +71,11 @@ export const Callback = (req: Request, res: Response) => {
                             cover: item.album.images[0].url,
                         };
                     });
-                    res.render("home", { data: topMusics });
+                    res.send({ data: topMusics });
                 })
                 .catch((err) => {
                     console.log(err.response.message);
                 });
-            // use the access token to access the Spotify Web API
-            /* request.get(options, (error: any, response: any, body: any) => {
-                //getting the top 10 musics name and cover album
-                res.render("home",{data: body});
-            });
- */
-            // we can also pass the token to the browser to make requests from there
-            /* res.redirect(
-                "/#" +
-                    querystring.stringify({
-                        access_token: access_token,
-                        refresh_token: refresh_token,
-                    })
-            ); */
         } else {
             res.redirect(
                 "/#" +
