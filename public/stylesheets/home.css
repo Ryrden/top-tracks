@@ -1,3 +1,18 @@
-* {
-    background-color: pink;
+
+.arroz{
+    padding: 0;
+    position: relative;
+}
+
+.tofu{
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(100, 96, 96, 0.596)
+    
+}
+
+.abacate{
+    text-align: center;
 }

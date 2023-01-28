@@ -3,12 +3,16 @@
 <div class="container-fluid">
     <h1 class="header text-center">Spotify Application</h1>
     <div class="container justify-content-center">
-        <!-- Do a square box with images 5x5 -->
+
+<%let arr=0%>
+
         <% for(let i = 0; i < 5; i++) { %>
             <div class="row">
                 <% for(let j = 0; j < 5; j++) { %>
-                    <div class="col">
-                        <img src="<%= data[0].cover %>" alt="" width="150px">
+                    <div class="col arroz">
+                        <img src="<%= data[arr].cover %>" alt="" width="100%">
+                        <div class="abacate"><p class="tofu"><%= data[arr].name %></p></div>
+                        <%arr = arr + 1%>
                     </div>
                 <% } %>
             </div>
