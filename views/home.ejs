@@ -1,6 +1,6 @@
 <% layout("layouts/boilerplate") %>
 <link rel="stylesheet" href="/stylesheets/home.css">
-<div class="container-fluid">
+<div class="abacate">
     <h1 class="header text-center">Spotify Application</h1>
     <div class="container justify-content-center">
 
@@ -11,7 +11,7 @@
                 <% for(let j = 0; j < 5; j++) { %>
                     <div class="col arroz">
                         <img src="<%= data[arr].cover %>" alt="" width="100%">
-                        <div class="abacate"><p class="tofu"><%= data[arr].name %></p></div>
+                        <p class="tofu"><%= data[arr].name %> - <%= data[arr].artists%></p>
                         <%arr = arr + 1%>
                     </div>
                 <% } %>
