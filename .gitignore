@@ -28,3 +28,7 @@ node_modules/
 dist/
 coverage/
 .env
+
+
+*.txt
+.vscode
