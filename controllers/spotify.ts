@@ -2,7 +2,8 @@ import { Request, Response } from "express";
 import querystring from "querystring";
 import request from "request";
 import dotenv from "dotenv";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { Track } from "../models/TrackModel";
 
 dotenv.config();
 
@@ -64,17 +65,23 @@ export const Callback = (req: Request, res: Response) => {
                         Authorization: `Bearer ${access_token}`,
                     },
                 })
-                .then((response) => {
-                    const topMusics = response.data.items.map((item: any) => {
+                .then((response: AxiosResponse) => {
+                    const topMusics = response.data.items.map((item: Track) => {
+                        const artists: string[] = item.artists.map((artist) => {
+                            return artist.name;
+                        });
+                        const allArtistis = artists.join(", ");
                         return {
                             name: item.name,
+                            artists: allArtistis,
                             cover: item.album.images[0].url,
                         };
                     });
                     res.render("home", { data: topMusics });
                 })
                 .catch((err) => {
-                    console.log(err.response.message);
+                    const {status, data} = err.response;
+                    console.log(status, data);
                 });
         } else {
             res.redirect(
