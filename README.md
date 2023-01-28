@@ -74,7 +74,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/76923948?v=4" width="100px;" alt="Foto do Ryan no GitHub"/><br>
+        <img src="https://github.com/ryrden.png" width="100px;" alt="Foto do Ryan no GitHub"/><br>
         <sub>
           <b>Ryrden</b>
         </sub>
@@ -82,7 +82,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/82914611?v=4" width="100px;" alt="Foto da Letícia no GitHub"/><br>
+        <img src="https://github.com/lettymoon.png" width="100px;" alt="Foto da Letícia no GitHub"/><br>
         <sub>
           <b>Lettymoon</b>
         </sub>
