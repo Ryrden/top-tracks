@@ -1,21 +1,21 @@
 <% layout("layouts/boilerplate") %>
 <link rel="stylesheet" href="/stylesheets/home.css">
 <div class="abacate">
-    <h1 class="header text-center">Spotify Application</h1>
-    <div class="container justify-content-center">
+	<h1 class="header text-center">Spotify Application</h1>
+	<div class="container justify-content-center">
 
-<%let arr=0%>
+		<%let arr=0%>
 
-        <% for(let i = 0; i < 5; i++) { %>
-            <div class="row">
-                <% for(let j = 0; j < 5; j++) { %>
-                    <div class="col arroz">
-                        <img src="<%= data[arr].cover %>" alt="" width="100%">
-                        <p class="tofu"><%= data[arr].name %> - <%= data[arr].artists%></p>
-                        <%arr = arr + 1%>
-                    </div>
-                <% } %>
-            </div>
-        <% } %>
-    </div>
+		<% for(let i = 0; i < 5; i++) { %>
+		<div class="row">
+			<% for(let j = 0; j < 5; j++) { %>
+			<div class="col arroz">
+				<img src="<%= data[arr].cover %>" alt="" width="100%">
+				<p class="tofu"><%= data[arr].name %> - <%= data[arr].artists%></p>
+				<%arr = arr + 1%>
+			</div>
+			<% } %>
+		</div>
+		<% } %>
+	</div>
 </div>

@@ -1,5 +1,5 @@
-*{
-    font-family: 'Secular One', sans-serif;
+* {
+    font-family: "Secular One", sans-serif;
 }
 .btn-primary {
     padding: 0.5em 1.5em;
@@ -7,6 +7,6 @@
 }
 
 .btn-primary.spotify {
-    background-color: #1DB954;
+    background-color: #1db954;
     border: none;
 }

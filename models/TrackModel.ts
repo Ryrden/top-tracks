@@ -1,7 +1,7 @@
 import { Album } from "./AlbumModel";
 
 export type Track = {
-    album: Album
+    album: Album;
     artists: Array<any>;
     available_markets: Array<string>;
     disc_number: number;
@@ -22,4 +22,4 @@ export type Track = {
     track_number: number;
     type: string;
     uri: string;
-}
+};
