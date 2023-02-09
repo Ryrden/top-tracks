@@ -1,6 +1,6 @@
 <% layout("layouts/boilerplate") %>
 <link rel="stylesheet" href="/stylesheets/home.css">
-<div class="d-flex flex-column align-items-center abacate" onload="autoClick();">
+<div class="d-flex flex-column align-items-center abacate">
 	<h1 class="header text-center">Spotify Application</h1>
 	<div class="container justify-content-center" id="htmltoimage">
 		<%let arr=0%>
@@ -8,9 +8,9 @@
 		<div class="row">
 			<% for(let j = 0; j < 5; j++) { %>
 			<div class="col arroz">
-				<img src="<%= data[arr].cover %>" crossorigin="anonymous" alt=""
-						width="100%">
-				<p class="tofu"><%= data[arr].name %> - <%= data[arr].artists%></p>
+				<img src="<%= data[arr].cover %>" crossorigin="anonymous">
+				<!-- limitate number of characteres from name and artists to fit in imagem model -->
+				<p class="tofu"><%= data[arr].name %>%></p>
 				<%arr = arr + 1%>
 			</div>
 			<% } %>

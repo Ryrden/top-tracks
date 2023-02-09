@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.arroz img {
+    width: 100%;
+}
+
 .tofu {
     margin: 0;
     position: absolute;
@@ -17,4 +21,15 @@
 .abacate {
     width: 35em;
     margin: 0 auto;
+}
+
+/* Modeling to fit in smart phone screens */
+@media screen and (max-width: 480px) {
+    .abacate {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .tofu {
+        font-size: 0.5em;
+    }
 }
