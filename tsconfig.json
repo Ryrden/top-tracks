@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "skipLibCheck": true,
+        "target": "esnext",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "allowJs": true,
+        "lib": ["dom", "es6"],
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": ["./*"]
+        }
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["./**/*.ts", "tests/**/*.spec.ts"],
+    "files": ["index.ts"]
+}
