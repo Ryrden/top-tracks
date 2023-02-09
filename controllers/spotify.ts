@@ -44,7 +44,11 @@ export const Authorization = (req: Request, res: Response): void => {
 
 const stateKey = "spotify_auth_state";
 export const Callback = (req: Request, res: Response): void => {
-    const getTopMusicsFromUser: any = (error: any, response: Response, body: any ): void => {
+    const getTopMusicsFromUser: any = (
+        error: any,
+        response: Response,
+        body: any
+    ): void => {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token;
             const refresh_token = body.refresh_token;
@@ -70,7 +74,7 @@ export const Callback = (req: Request, res: Response): void => {
                     res.render("home", { data: topMusics });
                 })
                 .catch((err) => {
-                    const {status, data} = err.response;
+                    const { status, data } = err.response;
                     console.log(status, data);
                 });
         } else {
