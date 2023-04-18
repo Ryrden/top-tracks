@@ -4,7 +4,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/ryrden/README-template?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/ryrden/README-template?style=for-the-badge)
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="https://i.imgur.com/dXdTrxy.png" alt="exemplo imagem">
 
 > Obtenha as músicas mais tocadas de seu spotify de diversas maneiras.
 
