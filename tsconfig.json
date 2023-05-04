@@ -1,20 +1,21 @@
 {
     "compilerOptions": {
         "esModuleInterop": true,
-        "module": "commonjs",
-        "skipLibCheck": true,
         "target": "esnext",
+        "module": "commonjs",
         "moduleResolution": "node",
-        "sourceMap": true,
-        "outDir": "dist",
-        "allowJs": true,
         "lib": ["dom", "es6"],
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "allowJs": true,
         "baseUrl": "./src",
         "paths": {
-            "@/*": ["./*"]
+            "@/*": ["./src/*"]
         }
     },
     "exclude": ["node_modules", "dist"],
-    "include": ["./**/*.ts", "tests/**/*.spec.ts"],
-    "files": ["index.ts"]
+    "include": ["./src/**/*.ts", "tests/**/*.spec.ts"],
+    "files": ["./src/index.ts"]
 }

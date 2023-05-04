@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-const ejsMate = require("ejs-mate");
+import ejsMate from "ejs-mate";
 import dotenv from "dotenv";
 import path from "path";
 
