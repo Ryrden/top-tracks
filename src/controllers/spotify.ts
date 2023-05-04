@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { RequestHandler } from "express";
 import querystring from "querystring";
 import request from "request";
 import dotenv from "dotenv";
@@ -23,7 +23,7 @@ const generateRandomString = (length: number): string => {
     return text;
 };
 
-export const Authorization = (req: Request, res: Response): void => {
+export const Authorization: RequestHandler = (req, res, next): void => {
     const state = generateRandomString(16);
     res.cookie(stateKey, state);
 
@@ -43,12 +43,8 @@ export const Authorization = (req: Request, res: Response): void => {
 };
 
 const stateKey = "spotify_auth_state";
-export const Callback = (req: Request, res: Response): void => {
-    const getTopMusicsFromUser: any = (
-        error: any,
-        response: Response,
-        body: any
-    ): void => {
+export const Callback: RequestHandler = (req, res, next): void => {
+    const getTopMusicsFromUser = (error, response, body): void => {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token;
             const refresh_token = body.refresh_token;
@@ -124,8 +120,8 @@ export const Callback = (req: Request, res: Response): void => {
     }
 };
 
-export const RefreshToken = (req: Request, res: Response): void => {
-    const func: any = (error: any, response: Response, body: any): void => {
+export const RefreshToken: RequestHandler = (req, res, next): void => {
+    const func = (error, response, body): void => {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token;
             res.send({
