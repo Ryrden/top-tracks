@@ -1,9 +1,8 @@
 import { RequestHandler } from "express";
-import querystring from "querystring";
-import request from "request";
+import request, { RequestCallback } from "request";
 import dotenv from "dotenv";
 import axios, { AxiosResponse } from "axios";
-import { Track } from "../models/TrackModel";
+import { Track } from "models/TrackModel";
 
 dotenv.config();
 
@@ -23,7 +22,7 @@ const generateRandomString = (length: number): string => {
     return text;
 };
 
-export const Authorization: RequestHandler = (req, res, next): void => {
+export const Authorization: RequestHandler = (req, res) => {
     const state = generateRandomString(16);
     res.cookie(stateKey, state);
 
@@ -32,7 +31,7 @@ export const Authorization: RequestHandler = (req, res, next): void => {
         "user-read-private user-read-email user-top-read user-follow-read";
     res.redirect(
         "https://accounts.spotify.com/authorize?" +
-            querystring.stringify({
+            new URLSearchParams({
                 response_type: "code",
                 client_id: client_id,
                 scope: scope,
@@ -43,11 +42,10 @@ export const Authorization: RequestHandler = (req, res, next): void => {
 };
 
 const stateKey = "spotify_auth_state";
-export const Callback: RequestHandler = (req, res, next): void => {
-    const getTopMusicsFromUser = (error, response, body): void => {
+export const Callback: RequestHandler = (req, res) => {
+    const getTopMusicsFromUser: RequestCallback = (error, response, body) => {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token;
-            const refresh_token = body.refresh_token;
 
             axios
                 .get("https://api.spotify.com/v1/me/top/tracks?limit=25", {
@@ -70,19 +68,12 @@ export const Callback: RequestHandler = (req, res, next): void => {
                     res.render("home", { data: topMusics });
                 })
                 .catch((err) => {
-                    const { status, data } = err.response;
-                    console.log(status, data);
+                    return new Error("Something went wrong: " + err);
                 });
         } else {
-            res.redirect(
-                "/#" +
-                    querystring.stringify({
-                        error: "invalid_token",
-                    })
-            );
+            return new Error("Something went wrong: " + "invalid_token");
         }
     };
-
     // your application requests refresh and access tokens
     // after checking the state parameter
 
@@ -91,12 +82,7 @@ export const Callback: RequestHandler = (req, res, next): void => {
     const storedState = req.cookies ? req.cookies[stateKey] : null;
 
     if (state === null || state !== storedState) {
-        res.redirect(
-            "/#" +
-                querystring.stringify({
-                    error: "state_mismatch",
-                })
-        );
+        return new Error("Something went wrong: " + "state_mismatch");
     } else {
         res.clearCookie(stateKey);
         const authOptions = {
@@ -120,8 +106,8 @@ export const Callback: RequestHandler = (req, res, next): void => {
     }
 };
 
-export const RefreshToken: RequestHandler = (req, res, next): void => {
-    const func = (error, response, body): void => {
+export const RefreshToken: RequestHandler = (req, res) => {
+    const func: RequestCallback = (error, response, body) => {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token;
             res.send({
