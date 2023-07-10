@@ -17,7 +17,8 @@
 		</div>
 		<% } %>
 	</div>
-	<button class="btn btn-secondary my-3" id="download" onclick="downloadImage()">Download
+	<button class="btn btn-secondary my-3" id="download"
+			onclick="downloadImage()">Download
 		Image</button>
 </div>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
@@ -25,6 +26,7 @@
 	function autoClick() {
 		document.getElementById("download").click();
 	}
+
 	function downloadImage() {
 
 		window.scrollTo(0, 0);
@@ -33,8 +35,9 @@
 			background: "black",
 			allowTaint: true,
 			useCORS: true,
-		}).then(function (canvas) {
-			var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+		}).then(function(canvas) {
+			var image = canvas.toDataURL("image/png").replace("image/png",
+				"image/octet-stream");
 			simulateDownloadImageClick(image, "image.png");
 		});
 	}

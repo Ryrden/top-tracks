@@ -5,7 +5,6 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "lib": ["dom", "es6"],
-        "rootDir": "./src",
         "outDir": "./dist",
         "skipLibCheck": true,
         "sourceMap": true,

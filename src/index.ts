@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import ejsMate from "ejs-mate";
+const ejsMate = require("ejs-mate");
 import dotenv from "dotenv";
 import path from "path";
 
@@ -14,9 +14,9 @@ const port = process.env.SERVER_PORT || 5000;
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "../src/views"));
 
-app.use(express.static(__dirname + "/src/public"))
+app.use(express.static(__dirname + "../src/public"))
     .use(cors())
     .use(cookieParser());
 
