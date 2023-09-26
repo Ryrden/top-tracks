@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "engines": {
-        "node": "20.X"
+        "node": "18.X"
     },
     "scripts": {
         "start": "node ./dist/index.js",
@@ -24,7 +24,8 @@
         "dotenv": "^16.0.3",
         "ejs-mate": "^4.0.0",
         "express": "^4.17.3",
-        "request": "^2.88.2"
+        "request": "^2.88.2",
+        "typescript": "^5.2.2"
     },
     "devDependencies": {
         "@types/cookie-parser": "^1.4.3",
