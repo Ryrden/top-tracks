@@ -8,9 +8,8 @@
 		<div class="row">
 			<% for(let j = 0; j < 5; j++) { %>
 			<div class="col arroz">
-				<img src="<%= data[arr].cover %>" crossorigin="anonymous">
-				<!-- limitate number of characteres from name and artists to fit in imagem model -->
-				<p class="tofu"><%= data[arr].name %>%></p>
+				<img src="<%= data[arr].cover %>" alt="" width="100%">
+				<p class="tofu"><%= data[arr].name %> - <%= data[arr].artists%></p>
 				<%arr = arr + 1%>
 			</div>
 			<% } %>
