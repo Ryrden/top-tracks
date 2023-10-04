@@ -3,16 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: #F7F7F7;
+  --background-start-rgb: #F7F7F7;
+  --background-end-rgb: #F7F7F7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* TODO: definir cores no dark mode depois */
+    /* --foreground-rgb: #070707; */
+    --foreground-rgb: #F7F7F7;
+    --background-start-rgb: #F7F7F7;
+    --background-end-rgb: #F7F7F7;
   }
 }
 
@@ -24,4 +26,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
