@@ -1,5 +1,5 @@
 {
-    "name": "toptracksspotify",
+    "name": "top-tracks-spotify",
     "version": "0.0.0",
     "description": "",
     "main": "index.js",
@@ -22,7 +22,6 @@
         "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
-        "ejs-mate": "^4.0.0",
         "express": "^4.17.3",
         "request": "^2.88.2",
         "typescript": "^5.2.2"
