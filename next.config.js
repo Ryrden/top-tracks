@@ -8,7 +8,7 @@ const nextConfig = {
     images: {
         domains: ['i.scdn.co'],
     },
-    assetPrefix: 'https://top-tracks-spotify.vercel.app/',
+    assetPrefix: process.env.NODE_ENV === 'production' ? 'https://top-tracks-spotify.vercel.app/' : 'http://localhost:5000'
 }
 
 module.exports = nextConfig
