@@ -4,9 +4,6 @@ const config: Config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}'
   ],
-  purge: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}'
-  ],
   theme: {
     screens: {
       'xs': "320px",
