@@ -3,7 +3,6 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/Components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
