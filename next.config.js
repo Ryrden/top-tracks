@@ -8,6 +8,7 @@ const nextConfig = {
     images: {
         domains: ['i.scdn.co'],
     },
+    assetPrefix: 'https://top-tracks-spotify.vercel.app/',
 }
 
 module.exports = nextConfig
