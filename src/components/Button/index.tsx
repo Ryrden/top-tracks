@@ -12,8 +12,8 @@ export default function Button({ children, type, onClick, className, variant }: 
     const btnDefault = "rounded-lg p-4 shadow-md text-lg font-normal"
     const btnTransition = "transition duration-180 ease-linear"
     const btnVariant = {
-        "primary": "bg-blue-600 text-white hover:bg-blue-700",
-        "secondary": "bg-white border-2 border-blue text-black hover:bg-blue-600 hover:text-white"
+        "primary": "bg-green-600 text-white hover:bg-green-700",
+        "secondary": "bg-white border-2 border-green text-black hover:bg-green-600 hover:text-white"
     }
     return <button type={type} className={`${className} ${btnDefault} ${btnTransition} ${btnVariant[variant]}`} onClick={onClick}>{children}</button>;
 }

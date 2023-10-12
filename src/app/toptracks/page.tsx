@@ -51,7 +51,11 @@ export default function TopTracks() {
 
 	return (
 		<main className="flex flex-col items-center py-16">
-			<h1 className="text-4xl mb-8">Yours Top Tracks</h1>
+			<span id="logo" className="flex flex-col items-center justify-center mb-8">
+				<Image src="/Spotify_Logo_RGB_Green.png" alt="Spotify Logo" width={150} height={150} className="mb-2"/>
+				<h1 className="text-5xl">Yours Top Tracks</h1>
+				<h2 className="text-lg mt-4">the 25 top tracks of the last 6 months</h2>
+			</span>
 			<div id="imageGrid" className="grid grid-cols-[repeat(5,minmax(3rem,1fr))] xs:mx-4 md:mx-16">
 				{topTracks.map((track, index) => (
 					<div key={index} className="relative">
