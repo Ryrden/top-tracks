@@ -36,7 +36,7 @@ export default function TopTracks() {
 		const options: any = {
 			backgroundColor: "black",
 			useCORS: true,
-			scale: 2,
+			scale: 1,
 		};
 		if (imageGrid) {
 			window.scrollTo(0, 0);
@@ -54,9 +54,11 @@ export default function TopTracks() {
 			<h1 className="text-4xl mb-8">Yours Top Tracks</h1>
 			<div id="imageGrid" className="grid grid-cols-[repeat(5,minmax(3rem,1fr))] xs:mx-4 md:mx-16">
 				{topTracks.map((track, index) => (
-					<div key={index} className="text-center">
+					<div key={index} className="relative">
+						<p className="xs:text-[0.35rem] sm:text-[0.65rem] md:text-[0.70rem] font-outline-2 text-white absolute top-0 left-0 p-[0.5px]">
+							{track.name}
+						</p>
 						<Image src={track.cover} alt={track.name} width={150} height={150} />
-						{/* <p className="text-sm">{track.name}</p> */}
 					</div>
 				))}
 			</div>

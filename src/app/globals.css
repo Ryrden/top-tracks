@@ -18,6 +18,15 @@
   }
 }
 
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 0.02rem black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 1rem black;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -27,4 +36,5 @@ body {
     )
     rgb(var(--background-start-rgb));
   min-height: 100vh;
+  font-size: 16px;
 }
