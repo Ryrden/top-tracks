@@ -36,7 +36,7 @@ export default function TopTracks() {
 		const options: any = {
 			backgroundColor: "black",
 			useCORS: true,
-			scale: 1,
+			scale: 2,
 		};
 		if (imageGrid) {
 			window.scrollTo(0, 0);
